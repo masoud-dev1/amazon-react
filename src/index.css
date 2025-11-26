@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.bg-menu {
+ background-color: #FF6200;
+}
+.border-menu{
+   
+   border: 1px solid #FF6200;
+}
+.border-menu:hover{
+    background-color: #FF6200;
+    border: 1px solid whitesmoke;
+}
