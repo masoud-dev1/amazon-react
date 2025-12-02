@@ -1,15 +1,15 @@
 export default function Menu(){
     return(
         <>
-          <div className=" flex w-full bg-menu items-center p-1 sticky top-0 z-100">
+          <div className=" flex w-full bg-menu items-center p-1 sticky top-0 z-100 ">
 
 
                 {/* left */}
-                <div className=" w-8/50 flex px-3">
+                <div className=" xl:w-8/50 flex px-3  md:w-10/50 max-sm:w-15/50 ">
                    <div className=" w-3/7 ">
-                      <img src="../../public/1.png" className="object-cover mt-2 " alt="" />
+                      <img src="../../public/1.png" className="object-cover mt-2" alt="" />
                    </div>
-                   <div className=" w-4/7 ms-4 flex ">
+                   <div className=" w-4/7 ms-4 flex max-sm:hidden">
 
                    <div className="text-white">
                     <i class="fa-solid fa-location-dot mt-6"></i>
@@ -26,13 +26,13 @@ export default function Menu(){
 
 
                 {/* middle searchbar */}
-                <div className=" w-31/50">
+                <div className="  max-sm:w-34/50  md:w-30/50  lg:w-26/50  xl:w-29/50  2xl:w-31/50">
                    <div className="flex  items-center w-full justify-center">
 
-                       <div className="w-3/50  flex justify-end"> 
-                        <div className="bg-gray-200 w-17/20 rounded-tl-sm rounded-bl-sm relative py-2">
-                           <span className="text-sm ms-3">All</span>
-                           <i class="fa-solid fa-caret-down text-shadow-sm text-sm ms-1"></i>
+                       <div className="bg-gray-200 rounded-tl-sm rounded-bl-sm w-3/50 lg:w-5/50 xl:w-3/50 md:w-8/50 max-sm:w-10/50 flex justify-end"> 
+                        <div className="b w-17/20 rounded-tl-sm rounded-bl-sm relative py-2">
+                           <span className="text-sm ms-3">All+</span>
+                           {/* <i class="fa-solid fa-caret-down text-shadow-sm text-sm ms-1"></i> */}
                             {/* <div className="absolute bg-emerald-600 p-1">
 
                                 به اضایه هر category یدونه اضافه میشود ازین div 
@@ -44,9 +44,9 @@ export default function Menu(){
                         </div>
                        </div>
 
-                       <input type="search" className="bg-white w-45/50 py-2 focus:outline-0 " placeholder="search amazon "/>
+                       <input type="search" className="bg-white w-45/50  py-2 focus:outline-0 " placeholder="search amazon "/>
 
-                       <div className="w-2/50 h-full bg-gray-200 rounded-tr-sm rounded-br-sm flex justify-center py-2"> 
+                       <div className="w-2/50 lg:w-4/50 h-full md:w-6/50 max-sm:w-10/50 xl:w-3/50 bg-gray-200 rounded-tr-sm rounded-br-sm flex justify-center py-2"> 
                         <div className="">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
@@ -57,13 +57,13 @@ export default function Menu(){
 
 
                 {/* right */}
-                <div className=" w-11/50 ">
+                <div className=" xl:w-11/50  lg:w-9/51 text-nowrap max-sm:hidden">
 
                      <div className="flex ">
                           <div className=" w-2/6 flex justify-end  space-x-1">
                              
                               <div className="border-menu flex  w-3/4">
-                                  <i class="fa-solid fa-flag text-red-800 text-sm mt-7 ms-2"></i>
+                                  <i class="fa-solid fa-flag  text-sm mt-7 ms-2"></i>
                                 <span className="font-semibold text-sm mt-6 text-white">EN</span>
                                 <i class="fa-solid fa-caret-down text-sm mt-7 text-white"></i>
                               </div>
@@ -94,7 +94,7 @@ export default function Menu(){
                 </div>
             </div>
 
-            <div className="down-menu w-full flex items-center py-1">
+            <div className="down-menu w-full flex items-center py-1 text-nowrap max-sm:hidden">
 
                 <div className="px-2 ms-4 h-full p-1 border-down-menu cursor-pointer">
                     <span className="text-sm font-bold">All</span>

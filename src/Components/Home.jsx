@@ -15,7 +15,9 @@ export default function Home()
  
           <Menu/>
 
-           <div className="container w-full absolute right-46 px-3 z-0">
+          <div className="container mx-auto bg-red-500">
+            <div className="relative bg-green-700">
+                <div className="container w-full absolute px-3 z-0">
 
              {/* دکمه‌های کاستوم */}
                 <button className="swiper-button-next-custom absolute right-2 top-1/5 z-50 cursor-pointer"> 
@@ -60,6 +62,10 @@ export default function Home()
                 </SwiperSlide>
             </Swiper>
            </div>
+            </div>
+
+          </div>
+           
 
            <div className="bg-wh constainer mx-auto z-40 relative top-68 ">
               <div className="container  mx-auto w-366">
