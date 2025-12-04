@@ -1,8 +1,346 @@
+import { useState } from "react"
+
 export default function Menu(){
+    const [sidebar , setSidebar] = useState(false);
+
+    const handleClick = () => {
+        setSidebar(true);
+        console.log(sidebar)
+    }
+    console.log(sidebar);
+
+    const [all , setAll] = useState(false);
+    const handleAll =()=>{
+        setAll(true)
+    }
+    const handleAllLess = ()=>{
+        setAll(false)
+    }
+
     return(
         <>
+        
+       
           <div className=" flex w-full bg-menu items-center p-1 sticky top-0 z-100 ">
 
+            {/* black screen */}
+           {
+            sidebar === true ?  <div className="bg-black opacity-80 fixed right-0 top-0 h-full w-full z-50 ">
+
+            </div> : ''
+           }
+
+             {/* sidebar */}
+            <div className="fixed left-0 h-full w-92 bg-white z-60 top-0 overflow-y-auto">
+                <div className="bg-gray-700 w-full py-2 block">
+                    <span className="text-white ms-19 font-bold text-xl">Hello , sign in</span>
+                </div>
+                <div className=" border-b-1 border-gray-300 w-full p-5 px-10">
+                    <div className="bg-teal-300 font-semibold text-lg">Digital Content & Devices</div>
+                    <div className="cursor-pointer w-full mt-4 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Prime Video</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Amazon Music</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Kindle E-readers & Books</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Amazon Appstore</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div className={`border-b-1 border-gray-300 w-full p-5 px-10 overflow-hidden  transition-all duration-300 bg-yellow-300 ${all === true ? 'h-270' : 'h-70'} `}>
+                    <div className="bg-teal-300 font-semibold text-lg">Digital Content & Devices</div>
+                    <div className="cursor-pointer w-full mt-4 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Prime Video</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Amazon Music</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Kindle E-readers & Books</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Amazon Appstore</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    {all === false ? <div className="cursor-pointer w-full mt-4 grid grid-cols-3 bg-fuchsia-300" onClick={handleAll}>                        
+                        <div className="grid grid-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">See All ...</span>
+                            
+                        </div>
+                    </div> : ''}
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Automotive</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Baby</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Beauty and Personal Care</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Women Fashion</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Mens Fashion</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Girls Fashion </span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Boys Fashion</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Health and Household</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Home and Kitchen</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Industrial and Scientific</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Luggage</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Movies & Television</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Pet supplies</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Software</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Sports and Outdoors</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Tools & Home Improvement</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Toys and Games</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Video Games</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    
+                    {all === true ? <div className="cursor-pointer w-full mt-4 grid grid-cols-3 bg-fuchsia-300" onClick={handleAllLess}>                        
+                        <div className="grid grid-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">See Less ...</span>
+                            
+                        </div>
+                    </div> : ''}
+
+                    
+                     
+                </div>
+                
+                
+            </div>
+            
 
                 {/* left */}
                 <div className=" xl:w-8/50 flex px-3  md:w-10/50 max-sm:w-15/50 ">
@@ -97,7 +435,7 @@ export default function Menu(){
             <div className="down-menu w-full flex items-center py-1 text-nowrap max-sm:hidden">
 
                 <div className="px-2 ms-4 h-full p-1 border-down-menu cursor-pointer">
-                    <span className="text-sm font-bold">All</span>
+                    <span className="text-sm font-bold" onClick={handleClick}>All</span>
                 </div>
                 <div className="px-4 h-full p-1 border-down-menu  cursor-pointer">
                     <span className="text-sm ">Black Fridy</span>
@@ -119,6 +457,9 @@ export default function Menu(){
                 </div>
               
             </div>
+            
+
+            
 
         </>
     )
