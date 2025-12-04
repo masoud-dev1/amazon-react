@@ -17,6 +17,19 @@ export default function Menu(){
         setAll(false)
     }
 
+    const [all1 , setAll1] = useState(false);
+    const handleAll1 =()=>{
+        setAll1(true)
+    }
+    const handleAllLess1 = ()=>{
+        setAll1(false)
+    }
+
+    const handleClose =()=> {
+        setSidebar(false)
+    }
+
+
     return(
         <>
         
@@ -25,18 +38,22 @@ export default function Menu(){
 
             {/* black screen */}
            {
-            sidebar === true ?  <div className="bg-black opacity-80 fixed right-0 top-0 h-full w-full z-50 ">
+            sidebar === true ?  <div onClick={handleClose} className="bg-black opacity-80 fixed right-0 top-0 h-full w-full z-50 ">
 
             </div> : ''
            }
 
              {/* sidebar */}
-            <div className="fixed left-0 h-full w-92 bg-white z-60 top-0 overflow-y-auto">
+             { sidebar && <> 
+             
+             <div className="fixed left-0 h-full w-92 bg-white z-60 top-0 overflow-y-auto">
                 <div className="bg-gray-700 w-full py-2 block">
                     <span className="text-white ms-19 font-bold text-xl">Hello , sign in</span>
                 </div>
+
+                {/* head */}
                 <div className=" border-b-1 border-gray-300 w-full p-5 px-10">
-                    <div className="bg-teal-300 font-semibold text-lg">Digital Content & Devices</div>
+                    <div className=" font-semibold text-lg">Digital Content & Devices</div>
                     <div className="cursor-pointer w-full mt-4 grid grid-cols-2">
                         <span className="text-gray-800 font-semibold text-sm text-nowrap">Prime Video</span>
                         <div className=" text-end">
@@ -79,8 +96,9 @@ export default function Menu(){
                     </div>
                 </div>
 
-                <div className={`border-b-1 border-gray-300 w-full p-5 px-10 overflow-hidden  transition-all duration-300 bg-yellow-300 ${all === true ? 'h-270' : 'h-70'} `}>
-                    <div className="bg-teal-300 font-semibold text-lg">Digital Content & Devices</div>
+                {/* seeall */}
+                <div className={`border-b-1 border-gray-300 w-full p-5 px-10 overflow-hidden  transition-all duration-300 ${all === true ? 'h-270' : 'h-70'} `}>
+                    <div className=" font-semibold text-lg">Digital Content & Devices</div>
                     <div className="cursor-pointer w-full mt-4 grid grid-cols-2">
                         <span className="text-gray-800 font-semibold text-sm text-nowrap">Prime Video</span>
                         <div className=" text-end">
@@ -122,7 +140,7 @@ export default function Menu(){
                         </div>
                         
                     </div>
-                    {all === false ? <div className="cursor-pointer w-full mt-4 grid grid-cols-3 bg-fuchsia-300" onClick={handleAll}>                        
+                    {all === false ? <div className="cursor-pointer w-full mt-4 grid grid-cols-3" onClick={handleAll}>                        
                         <div className="grid grid-2">
                         <span className="text-gray-800 font-semibold text-sm text-nowrap">See All ...</span>
                             
@@ -327,7 +345,7 @@ export default function Menu(){
                         
                     </div>
                     
-                    {all === true ? <div className="cursor-pointer w-full mt-4 grid grid-cols-3 bg-fuchsia-300" onClick={handleAllLess}>                        
+                    {all === true ? <div className="cursor-pointer w-full mt-4 grid grid-cols-3" onClick={handleAllLess}>                        
                         <div className="grid grid-2">
                         <span className="text-gray-800 font-semibold text-sm text-nowrap">See Less ...</span>
                             
@@ -337,9 +355,132 @@ export default function Menu(){
                     
                      
                 </div>
-                
+
+                {/* seeall2 */}
+                <div className={`border-b-1 border-gray-300 w-full p-5 px-10 overflow-hidden  transition-all duration-300  ${all1 === true ? 'h-84' : 'h-70'} `}>
+                    <div className=" font-semibold text-lg">Programs & Features</div>
+                    <div className="cursor-pointer w-full mt-4 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Gift Card</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Shop By Interest</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Amazon Live</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">International Shopping</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    {all1 === false ? <div className="cursor-pointer w-full mt-4 grid grid-cols-3" onClick={handleAll1}>                        
+                        <div className="grid grid-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">See All ...</span>
+                            
+                        </div>
+                    </div> : ''}
+
+                <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Amazon Secend Chance</span>
+                        <div className=" text-end">
+                            <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                        </div>
+                        
+                    </div>
+                    
+                    {all1 === true ? <div className="cursor-pointer w-full mt-4 grid grid-cols-3" onClick={handleAllLess1}>                        
+                        <div className="grid grid-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">See Less ...</span>
+                            
+                        </div>
+                    </div> : ''}
+
+                    
+                     
+                </div>
+
+                {/* foter */}
+                  <div className=" border-b-1 border-gray-300 w-full p-5 px-10">
+                    <div className=" font-semibold text-lg">Help & Setting</div>
+                    <div className="cursor-pointer w-full mt-4 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Your Account</span>
+                        <div className=" text-end">
+                          
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">English</span>
+                        <div className=" text-end">
+                          
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">United States</span>
+                        <div className=" text-end">
+                      
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Customer Service</span>
+                        <div className=" text-end">
+                           
+                        </div>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Sign in</span>
+                        <div className=" text-end">
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+           
                 
             </div>
+
+            {/* X */}
+            <div className="fixed w-6 h-6 left-93 top-0 z-60 p-2 py-3 cursor-pointer" onClick={handleClose}>
+                <svg className="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+</svg>
+
+            </div>
+            </>
+            }
             
 
                 {/* left */}
@@ -434,8 +575,8 @@ export default function Menu(){
 
             <div className="down-menu w-full flex items-center py-1 text-nowrap max-sm:hidden">
 
-                <div className="px-2 ms-4 h-full p-1 border-down-menu cursor-pointer">
-                    <span className="text-sm font-bold" onClick={handleClick}>All</span>
+                <div className="px-2 ms-4 h-full p-1 border-down-menu cursor-pointer" onClick={handleClick}>
+                    <span className="text-sm font-bold" >All</span>
                 </div>
                 <div className="px-4 h-full p-1 border-down-menu  cursor-pointer">
                     <span className="text-sm ">Black Fridy</span>
