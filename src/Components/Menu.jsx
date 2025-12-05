@@ -29,6 +29,13 @@ export default function Menu(){
         setSidebar(false)
     }
 
+    const [inside , setInside] = useState(true);
+    const handleInside =()=>{
+        setInside(false);
+    }
+    const handleInside1 =()=>{
+        setInside(true);
+    }
 
     return(
         <>
@@ -45,6 +52,8 @@ export default function Menu(){
 
              {/* sidebar */}
              { sidebar && <> 
+            
+
              
              <div className="fixed left-0 h-full w-92 bg-white z-60 top-0 overflow-y-auto">
                 <div className="bg-gray-700 w-full py-2 block">
@@ -52,9 +61,12 @@ export default function Menu(){
                 </div>
 
                 {/* head */}
+                <div className={`transform transition-transform duration-300 ${inside ? "translate-x-0" : '-translate-x-full'} absolute`}>
+
+                
                 <div className=" border-b-1 border-gray-300 w-full p-5 px-10">
                     <div className=" font-semibold text-lg">Digital Content & Devices</div>
-                    <div className="cursor-pointer w-full mt-4 grid grid-cols-2">
+                    <div className="cursor-pointer w-full mt-4 grid grid-cols-2" onClick={handleInside}>
                         <span className="text-gray-800 font-semibold text-sm text-nowrap">Prime Video</span>
                         <div className=" text-end">
                             <svg className="w-6 h-6 ms-30 text-gray-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -468,9 +480,57 @@ export default function Menu(){
                         
                     </div>
                 </div>
+
+                </div>
+            
+                <div className={`transform transition-transform duration-300 ${inside ? "-translate-x-full" : 'translate-x-0'}`}>
+                     <div onClick={handleInside1} className="cursor-pointer w-full py-3 px-10  border-b-1 border-gray-400">
+                        <span className="font-semibold">{"< "}Main Menu</span>
+                     </div>
+                     <div className=" w-full p-5 px-10">
+                    <div className=" font-semibold text-lg" >Prime Video</div>
+                    <div className="cursor-pointer w-full mt-4 grid grid-cols-2" >
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">All Videos</span>
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Included with Prime</span>
+                        
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Prime Video Channels</span>
+                   
+                        
+                    </div>
+                    <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Rent or Buy</span>
+   
+                    </div>
+                      <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Your Watchlist</span>
+   
+                    </div>
+                      <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Purchases & Rentals</span>
+   
+                    </div>
+                      <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Watch Anywhere</span>
+   
+                    </div>
+                      <div className="cursor-pointer w-full mt-5 grid grid-cols-2">
+                        <span className="text-gray-800 font-semibold text-sm text-nowrap">Getting Started</span>
+   
+                    </div>
+                </div>
+                </div>
            
                 
             </div>
+            
+                
+            
 
             {/* X */}
             <div className="fixed w-6 h-6 left-93 top-0 z-60 p-2 py-3 cursor-pointer" onClick={handleClose}>
