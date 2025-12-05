@@ -51,11 +51,12 @@ export default function Menu(){
            }
 
              {/* sidebar */}
-             { sidebar && <> 
+             
             
 
              
-             <div className="fixed left-0 h-full w-92 bg-white z-60 top-0 overflow-y-auto">
+             <div className={`fixed left-0 h-full w-92 bg-white z-60 top-0 overflow-y-auto   transform transition-transform duration-300
+    ${sidebar ? "translate-x-0" : "-translate-x-full"}`}>
                 <div className="bg-gray-700 w-full py-2 block">
                     <span className="text-white ms-19 font-bold text-xl">Hello , sign in</span>
                 </div>
@@ -539,8 +540,7 @@ export default function Menu(){
 </svg>
 
             </div>
-            </>
-            }
+            
             
 
                 {/* left */}
