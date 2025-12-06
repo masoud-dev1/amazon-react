@@ -14,6 +14,7 @@ export default function Home()
       
  
           <Menu/>
+          
 
           <div className="container mx-auto bg-red-500">
             <div className="relative bg-green-700">
