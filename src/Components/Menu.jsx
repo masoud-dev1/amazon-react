@@ -37,6 +37,19 @@ export default function Menu(){
         setInside(true);
     }
 
+    const [dark , setDark] = useState(false);
+    const [red , setRed] = useState(0)
+    const [abs1 , setAbs1] = useState(false);
+
+    const handleDarkTrue = () => {
+        setDark(true);
+        setAbs1(true);
+    }
+    const handleDarkFalse = () => {
+        setDark(false);
+        setAbs1(false);
+    }
+
     return(
         <>
         
@@ -601,17 +614,211 @@ export default function Menu(){
                      <div className="flex ">
                           <div className=" w-2/6 flex justify-end  space-x-1">
                              
-                              <div className="border-menu flex  w-3/4">
+                              <div className="border-menu flex  w-3/4 cursor-pointer relative" 
+                              onMouseEnter={handleDarkTrue}
+                              onMouseLeave={handleDarkFalse}
+                             
+                              >
                                   <i class="fa-solid fa-flag  text-sm mt-7 ms-2"></i>
                                 <span className="font-semibold text-sm mt-6 text-white">EN</span>
                                 <i class="fa-solid fa-caret-down text-sm mt-7 text-white"></i>
+
+                                {abs1 === true ? <div className="absolute bg-white h-140 w-60 left-0 top-14 p-3 shadow-white shadow-sm">
+                                    
+                                    <div className="  border-b-1 border-gray-300 h-17 w-full mt-1">
+                                        <div className=" w-full h-4">
+                                        <span className="text-sm ms-1 font-semibold text-gray-700 block">Change language</span>
+                                        
+                                        <div className=" h-5 w-full flex block mt-1.5" 
+                                        onMouseEnter={() => setRed(1)}
+                                        onMouseLeave={() => setRed(0)}
+                                        >
+                                            <div className="w-1/6 ">
+                                              <div className=" border-2 border-gray-400 rounded-full h-5 w-5 ">
+                                                 <div className={`w-3 mt-0.5 ms-0.5 h-3 rounded-full ${red === 1 ? "bg-red-600" : ""}`} 
+                                              
+                                                 ></div>
+                                              </div>
+                                            </div>
+                                            <div className=" w-full">
+                                                <span className="text-sm font-semibold text-gray-800">English - EN</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </div>
+
+                                      <div className=" w-full">
+                                        <div className=" w-full mt-4 grid grid-cols-1 border-gray-300 border-b-1 pb-6">
+                                        
+                                        <div className=" h-5 w-full flex block mt-1.5" 
+                                        onMouseEnter={() => setRed(2)}
+                                        onMouseLeave={() => setRed(0)}
+                                        >
+                                            <div className="w-1/6 ">
+                                              <div className=" border-2 border-gray-400 rounded-full h-5 w-5 ">
+                                                 <div className={`w-3 mt-0.5 ms-0.5 h-3 rounded-full ${red === 2 ? "bg-red-600" : ""}`} 
+                                              
+                                                 ></div>
+                                              </div>
+                                            </div>
+                                            <div className=" w-full">
+                                                <span className="text-sm font-semibold text-gray-800">العربیه - AR</span>
+                                            </div>
+                                        </div>
+
+                                         <div className=" h-5 w-full flex block mt-3" 
+                                        onMouseEnter={() => setRed(3)}
+                                        onMouseLeave={() => setRed(0)}
+                                        >
+                                            <div className="w-1/6 ">
+                                              <div className=" border-2 border-gray-400 rounded-full h-5 w-5 ">
+                                                 <div className={`w-3 mt-0.5 ms-0.5 h-3 rounded-full ${red === 3 ? "bg-red-600" : ""}`} 
+                                              
+                                                 ></div>
+                                              </div>
+                                            </div>
+                                            <div className=" w-full">
+                                                <span className="text-sm font-semibold text-gray-800">Deutsch - DE</span>
+                                            </div>
+                                        </div>
+
+                                        <div className=" h-5 w-full flex block mt-3" 
+                                        onMouseEnter={() => setRed(4)}
+                                        onMouseLeave={() => setRed(0)}
+                                        >
+                                            <div className="w-1/6 ">
+                                              <div className=" border-2 border-gray-400 rounded-full h-5 w-5 ">
+                                                 <div className={`w-3 mt-0.5 ms-0.5 h-3 rounded-full ${red === 4 ? "bg-red-600" : ""}`} 
+                                              
+                                                 ></div>
+                                              </div>
+                                            </div>
+                                            <div className=" w-full">
+                                                <span className="text-sm font-semibold text-gray-800">English - EN</span>
+                                            </div>
+                                        </div>
+
+                                        <div className=" h-5 w-full flex block mt-3" 
+                                        onMouseEnter={() => setRed(5)}
+                                        onMouseLeave={() => setRed(0)}
+                                        >
+                                            <div className="w-1/6 ">
+                                              <div className=" border-2 border-gray-400 rounded-full h-5 w-5 ">
+                                                 <div className={`w-3 mt-0.5 ms-0.5 h-3 rounded-full ${red === 5 ? "bg-red-600" : ""}`} 
+                                              
+                                                 ></div>
+                                              </div>
+                                            </div>
+                                            <div className=" w-full">
+                                                <span className="text-sm font-semibold text-gray-800">English - EN</span>
+                                            </div>
+                                        </div>
+
+                                        <div className=" h-5 w-full flex block mt-3" 
+                                        onMouseEnter={() => setRed(6)}
+                                        onMouseLeave={() => setRed(0)}
+                                        >
+                                            <div className="w-1/6 ">
+                                              <div className=" border-2 border-gray-400 rounded-full h-5 w-5 ">
+                                                 <div className={`w-3 mt-0.5 ms-0.5 h-3 rounded-full ${red === 6 ? "bg-red-600" : ""}`} 
+                                              
+                                                 ></div>
+                                              </div>
+                                            </div>
+                                            <div className=" w-full">
+                                                <span className="text-sm font-semibold text-gray-800">English - EN</span>
+                                            </div>
+                                        </div>
+
+                                        <div className=" h-5 w-full flex block mt-3" 
+                                        onMouseEnter={() => setRed(7)}
+                                        onMouseLeave={() => setRed(0)}
+                                        >
+                                            <div className="w-1/6 ">
+                                              <div className=" border-2 border-gray-400 rounded-full h-5 w-5 ">
+                                                 <div className={`w-3 mt-0.5 ms-0.5 h-3 rounded-full ${red === 7 ? "bg-red-600" : ""}`} 
+                                              
+                                                 ></div>
+                                              </div>
+                                            </div>
+                                            <div className=" w-full">
+                                                <span className="text-sm font-semibold text-gray-800">English - EN</span>
+                                            </div>
+                                        </div>
+
+                                        <div className=" h-5 w-full flex block mt-3" 
+                                        onMouseEnter={() => setRed(8)}
+                                        onMouseLeave={() => setRed(0)}
+                                        >
+                                            <div className="w-1/6 ">
+                                              <div className=" border-2 border-gray-400 rounded-full h-5 w-5 ">
+                                                 <div className={`w-3 mt-0.5 ms-0.5 h-3 rounded-full ${red === 8 ? "bg-red-600" : ""}`} 
+                                              
+                                                 ></div>
+                                              </div>
+                                            </div>
+                                            <div className=" w-full">
+                                                <span className="text-sm font-semibold text-gray-800">English - EN</span>
+                                            </div>
+                                        </div>
+
+                                        <div className=" h-5 w-full flex block mt-3" 
+                                        onMouseEnter={() => setRed(true)}
+                                        onMouseLeave={() => setRed(false)}
+                                        >
+                                            <div className="w-1/6 ">
+                                              <div className=" border-2 border-gray-400 rounded-full h-5 w-5 ">
+                                                 <div className={`w-3 mt-0.5 ms-0.5 h-3 rounded-full ${red === true ? "bg-red-600" : ""}`} 
+                                              
+                                                 ></div>
+                                              </div>
+                                            </div>
+                                            <div className=" w-full">
+                                                <span className="text-sm font-semibold text-gray-800">English - EN</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </div>
+
+                                    <div className="  border-b-1 border-gray-300 h-16 w-full mt-3">
+                                        <div className=" w-full h-4">
+                                        <span className="text-sm ms-1 font-semibold text-gray-700 block">Change currency</span>
+                                        
+                                        <div className=" h-5 w-full flex block mt-1.5" 
+                                        onMouseEnter={() => setRed(1)}
+                                        onMouseLeave={() => setRed(0)}
+                                        >
+                                            <div className=" w-full flex justify-around">
+                                                <span className="text-sm font-semibold text-gray-800 ">$ - USD - US Dollar</span>
+                                                <span className="text-sm font-semibold ms-6 text-blue-500">Change</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </div>
+
+                                    <div className=" w-full text-wrap mt-3">
+                                        <span className="tetx-gray-500 text-sm font-semibold text-gray-800">Youa Are Shopping on Amazon.com</span>
+                                    </div>
+
+                                    <div className=" text-center mt-4">
+                                        <span className="text-sm text-blue-500">Change country/region</span>
+                                    </div>
+                                    
+                                </div> : ''}
                               </div>
+                              
                             
                           </div>
                           
 
                           <div className=" w-3/6 flex justify-end">
-                             <div className=" w-11/12 space-y-0 border-menu py-2">
+                             <div className=" w-11/12 space-y-0 border-menu py-2 cursor-pointer"
+                             onMouseEnter={() => setDark(true)}
+                              onMouseLeave={() => setDark(false)}
+                             >
                                <div className="text-sm ms-2 text-white">sdad</div>
                                <div className="text-sm font-bold ms-2 text-white ">hi this is your,,,</div>
                              </div>
@@ -658,7 +865,10 @@ export default function Menu(){
                 </div>
               
             </div>
-            
+           
+            {dark &&  <div className="bg-black opacity-50 fixed top-0 right-0 w-full h-screen z-90">
+
+            </div>}
 
             
 
