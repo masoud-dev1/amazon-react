@@ -40,15 +40,32 @@ export default function Menu(){
     const [dark , setDark] = useState(false);
     const [red , setRed] = useState(0)
     const [abs1 , setAbs1] = useState(false);
+    const [abs2 , setAbs2] = useState(false);
 
     const handleDarkTrue = () => {
         setDark(true);
         setAbs1(true);
+
     }
     const handleDarkFalse = () => {
         setDark(false);
         setAbs1(false);
+        
     }
+    
+    const handleDark2 = () => {
+        setDark(true);
+       
+        setAbs2(true)
+    }
+    const handleDark2false = () => {
+        setDark(false);
+       
+        setAbs2(false);
+    }
+
+    const [hover , setHover] = useState(0);
+    
 
     return(
         <>
@@ -815,13 +832,96 @@ export default function Menu(){
                           
 
                           <div className=" w-3/6 flex justify-end">
-                             <div className=" w-11/12 space-y-0 border-menu py-2 cursor-pointer"
-                             onMouseEnter={() => setDark(true)}
-                              onMouseLeave={() => setDark(false)}
+
+                             <div className=" w-11/12 space-y-0 border-menu py-2 cursor-pointer relative"
+                             onMouseEnter={handleDark2}
+                              onMouseLeave={handleDark2false}
                              >
                                <div className="text-sm ms-2 text-white">sdad</div>
                                <div className="text-sm font-bold ms-2 text-white ">hi this is your,,,</div>
+
+                               { abs2 === true ? <div className="absolute bg-white h-20 w-120 -right-20 top-14">
+                                   <div className="w-full p-3 text-center flex justify-center pb-5 border-b-1 border-gray-300">
+                                      <div className="bg-amber-300 w-50 h-8 rounded-lg ">
+                                         <span className="text-sm ">Sign in</span>
+                                      </div>
+                                   </div> 
+                                   <div className=" bg-white grid grid-cols-2 shadow shadow-white">
+
+                                      <div className="  p-4">
+                                        <span className="font-bold text-gray-800 text-sm block">Your Lists</span>
+                                        <span
+                                        onMouseEnter={()=>setHover(13)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 13 ? "text-amber-600 underline" : "text-gray-800"}`}
+                                        
+                                        >Account</span>
+                                        <span 
+                                         onMouseEnter={()=>setHover(14)}
+                                        onMouseLeave={()=>setHover(0)}
+                                        className={` text-sm block mt-1 ${hover === 14 ? "text-amber-600 underline" : "text-gray-800"}`}>Orders</span>
+                                      </div>
+
+                                      <div className="  border-l-1 border-gray-300 p-4">
+                                        <span className="font-bold text-gray-800 text-sm block">Your Account</span>
+                                        <span
+                                        onMouseEnter={()=>setHover(1)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 1 ? "text-amber-600 underline" : "text-gray-800"}`}
+                                        
+                                        >Account</span>
+                                        <span 
+                                         onMouseEnter={()=>setHover(2)}
+                                        onMouseLeave={()=>setHover(0)}
+                                        className={` text-sm block mt-1 ${hover === 2 ? "text-amber-600 underline" : "text-gray-800"}`}>Orders</span>
+                                        <span
+                                        onMouseEnter={()=>setHover(3)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 3 ? "text-amber-600 underline" : "text-gray-800"}`}>Recommendations</span>
+                                        <span
+                                        onMouseEnter={()=>setHover(4)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 4 ? "text-amber-600 underline" : "text-gray-800"}`}>Browsing History</span>
+                                        
+                                        <span
+                                        onMouseEnter={()=>setHover(5)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 5 ? "text-amber-600 underline" : "text-gray-800"}`}>Browsing History</span>
+                                         <span
+                                        onMouseEnter={()=>setHover(6)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 6 ? "text-amber-600 underline" : "text-gray-800"}`}>Browsing History</span>
+                                         <span
+                                        onMouseEnter={()=>setHover(7)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 7 ? "text-amber-600 underline" : "text-gray-800"}`}>Browsing History</span>
+                                         <span
+                                        onMouseEnter={()=>setHover(8)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 8 ? "text-amber-600 underline" : "text-gray-800"}`}>Browsing History</span>
+                                         <span
+                                        onMouseEnter={()=>setHover(9)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 9 ? "text-amber-600 underline" : "text-gray-800"}`}>Browsing History</span>
+                                         <span
+                                        onMouseEnter={()=>setHover(10)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 10 ? "text-amber-600 underline" : "text-gray-800"}`}>Browsing History</span>
+                                         <span
+                                        onMouseEnter={()=>setHover(11)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 11 ? "text-amber-600 underline" : "text-gray-800"}`}>Browsing History</span>
+                                         <span
+                                        onMouseEnter={()=>setHover(12)}
+                                        onMouseLeave={()=>setHover(0)}
+                                         className={` text-sm block mt-1 ${hover === 12 ? "text-amber-600 underline" : "text-gray-800"}`}>Browsing History</span>
+                                      </div>
+                                      
+                                   </div>
+                               </div> : ""}
+
                              </div>
+
                           </div>
                           
                           <div className=" w-2/6 flex justify-end">
@@ -840,7 +940,7 @@ export default function Menu(){
                 </div>
             </div>
 
-            <div className="down-menu w-full flex items-center py-1 text-nowrap max-sm:hidden">
+            <div className="down-menu w-full flex items-center py-1 text-nowrap ">
 
                 <div className="px-2 ms-4 h-full p-1 border-down-menu cursor-pointer" onClick={handleClick}>
                     <span className="text-sm font-bold" >All</span>
